@@ -2,7 +2,7 @@
     @section('title', 'Find an Agent')
 
     <!-- Hero Section -->
-    <section class="py-24 bg-white relative overflow-hidden">
+    <section class="py-24 bg-gradient-to-b from-yellow-100 to-white-200 relative overflow-hidden">
         <div class="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
 
             <!-- Text -->

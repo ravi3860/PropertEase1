@@ -42,29 +42,29 @@
         </h2>
 
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          @forelse($topRatedProperties ?? [] as $property)
-            <div class="bg-white border-2 border-yellow-200 rounded-2xl shadow hover:shadow-xl hover:border-yellow-400 transform hover:-translate-y-2 transition duration-300 overflow-hidden">
-              <div class="relative">
-                <img src="{{ $property->images[0] ?? asset('images/default.jpg') }}" class="w-full h-60 object-cover">
-                <span class="absolute bottom-3 right-3 bg-yellow-500 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">
-                  LKR {{ number_format($property->price) }}
-                </span>
+         @forelse($topRatedProperties ?? [] as $property)
+            <div class="...">
+                <div class="relative">
+                  <img src="{{ $property->images->first()->file_path ?? asset('img/default.jpg') }}" class="w-full h-60 object-cover">
+                  <span class="absolute bottom-3 right-3 bg-yellow-500 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">
+                      LKR {{ number_format($property->price) }}
+                  </span>
               </div>
               <div class="p-6 space-y-2">
-                <h3 class="text-xl font-semibold truncate text-gray-900">{{ $property->title }}</h3>
-                <p class="text-sm text-gray-600 flex items-center">
-                  <i class="fas fa-map-marker-alt text-yellow-600 mr-2"></i> {{ $property->location }}
-                </p>
-                <p class="text-gray-500 text-sm line-clamp-2">{{ $property->description }}</p>
-                <a href="{{ route('properties.index') }}" 
-                   class="inline-block mt-3 text-yellow-600 font-semibold hover:underline hover:text-yellow-700 transition">
-                  View More →
-                </a>
+                  <h3 class="text-xl font-semibold truncate text-gray-900">{{ $property->title }}</h3>
+                  <p class="text-sm text-gray-600 flex items-center">
+                      <i class="fas fa-map-marker-alt text-yellow-600 mr-2"></i> {{ $property->city ?? $property->location ?? 'Unknown' }}
+                  </p>
+                  <p class="text-gray-500 text-sm line-clamp-2">{{ $property->description }}</p>
+                  <a href="{{ route('browse') }}" 
+                    class="inline-block mt-3 text-yellow-600 font-semibold hover:underline hover:text-yellow-700 transition">
+                      View More →
+                  </a>
               </div>
-            </div>
-          @empty
-            <p class="col-span-full text-center text-gray-600">No properties available right now.</p>
-          @endforelse
+          </div>
+      @empty
+          <p class="col-span-full text-center text-gray-600">No properties available right now.</p>
+      @endforelse
         </div>
       </div>
     </section>

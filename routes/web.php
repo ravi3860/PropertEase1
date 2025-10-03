@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\AdminDashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [PropertyController::class, 'index'])->name('home');
 Route::get('/about-us', function() {
     return view('aboutus');
 })->name('aboutus');
@@ -21,9 +22,6 @@ Route::get('/agents', function() {
 Route::get('/loans', function() {       
     return view('Loans');
 })->name('loans');
-Route::get('/contact', function() {
-    return view('contact');
-})->name('contact');
 
 Route::middleware([
     'auth:sanctum',
@@ -153,9 +151,10 @@ Route::middleware(['auth', 'role.or.owner'])->group(function () {
     Route::get('/my-contact-requests', [ContactRequestController::class, 'myRequests'])->name('contact-requests.my');
 });
 
-Route::get('/agent/contact-requests', [ContactRequestController::class, 'agentRequests'])->name('agent.contact-requests.index');
-Route::patch('/agent/contact-requests/{id}', [ContactRequestController::class, 'updateStatus'])->name('agent.contact-requests.update');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/agent/contact-requests', [ContactRequestController::class, 'agentRequests'])->name('agent.contact-requests.index');
+    Route::patch('/agent/contact-requests/{id}', [ContactRequestController::class, 'updateStatus'])->name('agent.contact-requests.update');
+});
 
 
-// Agents Listing
 Route::get('/agents', [AgentController::class, 'listAll'])->name('agents');

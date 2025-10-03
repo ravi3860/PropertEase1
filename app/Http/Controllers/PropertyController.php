@@ -19,7 +19,14 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+         // Get top 3 highest priced properties
+        $topRatedProperties = Property::with('images') // eager load images
+                                    ->orderBy('price', 'desc')
+                                    ->take(3)
+                                    ->get();
+
+        // Pass to home view
+        return view('home', compact('topRatedProperties'));
     }
 
     /**

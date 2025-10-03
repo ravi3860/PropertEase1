@@ -35,7 +35,6 @@
         <a href="{{ route('browse') }}" class="nav-link">Browse</a>
         <a href="{{ route('agents') }}" class="nav-link">Find Agent</a>
         <a href="{{ route('loans') }}" class="nav-link">Loans</a>
-        <a href="{{ route('contact') }}" class="nav-link">Contact</a>
       </nav>
 
       <!-- User Icon -->
@@ -88,7 +87,6 @@
           <li><a href="{{ route('browse') }}" class="hover:text-yellow-600">Browse Properties</a></li>
           <li><a href="{{ route('agents') }}" class="hover:text-yellow-600">Find an Agent</a></li>
           <li><a href="{{ route('loans') }}" class="hover:text-yellow-600">Home Loans</a></li>
-          <li><a href="{{ route('contact') }}" class="hover:text-yellow-600">Contact Us</a></li>
         </ul>
       </div>
 

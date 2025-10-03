@@ -75,7 +75,6 @@
       <a href="{{ route('browse') }}" class="text-gray-800 font-semibold hover:text-yellow-500 transition-all duration-300">Browse</a>
       <a href="{{ route('agents') }}" class="text-gray-800 font-semibold hover:text-yellow-500 transition-all duration-300">Find Agent</a>
       <a href="{{ route('loans') }}" class="text-gray-800 font-semibold hover:text-yellow-500 transition-all duration-300">Loans</a>
-      <a href="{{ route('contact') }}" class="text-gray-800 font-semibold hover:text-yellow-500 transition-all duration-300">Contact</a>
     </nav>
 
     <!-- User Dropdown -->
@@ -135,7 +134,7 @@
         <li><a href="{{ route('browse') }}" class="footer-link">Browse Properties</a></li>
         <li><a href="{{ route('agents') }}" class="footer-link">Find an Agent</a></li>
         <li><a href="{{ route('loans') }}" class="footer-link">Home Loans</a></li>
-        <li><a href="{{ route('contact') }}" class="footer-link">Contact Us</a></li>
+
       </ul>
     </div>
 
