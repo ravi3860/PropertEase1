@@ -14,6 +14,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @livewireStyles
 
+
   <style>
     .btn-hover { transition: all 0.3s ease-in-out; }
     .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
@@ -165,5 +166,6 @@
 </footer>
 
 @livewireScripts
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
